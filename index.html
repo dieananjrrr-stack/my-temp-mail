@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Mail by Diean</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan font Plus Jakarta Sans yang bersih -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Layer untuk background yang diatur di CSS -->
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <header>
+            <h1>📨 Temp Mail</h1>
+            <p>Host by <strong>Diean</strong></p>
+        </header>
+
+        <!-- Bagian Utama: Alamat Email -->
+        <div class="email-card">
+            <div class="email-input-group">
+                <input type="text" id="email-address" readonly value="Memuat...">
+                <div class="action-buttons">
+                    <button onclick="copyToClipboard()" id="copy-btn">Salin</button>
+                    <button onclick="generateNewEmail()" class="btn-new">Ganti Baru</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="status">
+            <span id="timer">Menunggu pesan masuk...</span>
+        </div>
+
+        <!-- Area Kotak Masuk -->
+        <div class="inbox-container">
+            <h3>Kotak Masuk</h3>
+            <div id="email-list">
+                <div class="empty-state">Belum ada email...</div>
+            </div>
+        </div>
+
+        <!-- Footer dengan Identitas & Media Sosial -->
+        <footer>
+            <p>Dibuat oleh <strong>Diean</strong></p>
+            <div class="social-links">
+                <!-- Link Facebook (Mencoba buka aplikasi FB di HP) -->
+                <a href="fb://facewebmodal/f?href=https://www.facebook.com/profile.php?id=61577644125987" class="social-btn fb">
+                    Facebook
+                </a>
+                <!-- Link WhatsApp -->
+                <a href="https://wa.me/qr/I555KH6OPKVXE1" target="_blank" class="social-btn wa">
+                    WhatsApp
+                </a>
+            </div>
+        </footer>
+
+        <!-- Modal Popup untuk baca email -->
+        <div id="email-viewer" class="hidden">
+            <div class="viewer-content">
+                <button onclick="closeViewer()" class="close-btn">&times;</button>
+                <h2 id="view-subject">Subject</h2>
+                <small id="view-from">Dari: ...</small>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div id="view-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pastikan file script.js ada di folder yang sama -->
+    <script src="script.js"></script>
+</body>
+</html>
